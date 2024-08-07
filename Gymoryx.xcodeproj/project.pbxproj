@@ -14,6 +14,7 @@
 		B1C315882C635F0B00B9CD2E /* GymoryxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315872C635F0B00B9CD2E /* GymoryxTests.swift */; };
 		B1C315922C635F0B00B9CD2E /* GymoryxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315912C635F0B00B9CD2E /* GymoryxUITests.swift */; };
 		B1C315942C635F0B00B9CD2E /* GymoryxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315932C635F0B00B9CD2E /* GymoryxUITestsLaunchTests.swift */; };
+		BBAFA9372C63AD8700DCE4FF /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9362C63AD8700DCE4FF /* loginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		B1C3158D2C635F0B00B9CD2E /* GymoryxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymoryxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C315912C635F0B00B9CD2E /* GymoryxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymoryxUITests.swift; sourceTree = "<group>"; };
 		B1C315932C635F0B00B9CD2E /* GymoryxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymoryxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BBAFA9362C63AD8700DCE4FF /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				B1C315762C635F0900B9CD2E /* GymoryxApp.swift */,
 				B1C315782C635F0900B9CD2E /* ContentView.swift */,
+				BBAFA9362C63AD8700DCE4FF /* loginScreen.swift */,
 				B1C3157A2C635F0B00B9CD2E /* Assets.xcassets */,
 				B1C3157C2C635F0B00B9CD2E /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAFA9372C63AD8700DCE4FF /* loginScreen.swift in Sources */,
 				B1C315792C635F0900B9CD2E /* ContentView.swift in Sources */,
 				B1C315772C635F0900B9CD2E /* GymoryxApp.swift in Sources */,
 			);
