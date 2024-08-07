@@ -59,24 +59,22 @@ struct loginScreen: View {
                 .padding(.leading,175)
                 .accentColor(Color(red: 0.132, green: 0.338, blue: 0.512))
                   
-                    Button(action:{
-                        
-                    })
+                NavigationLink(
+                        destination: Text("Login"),label:
                 {
                     Text("LOGIN")
                         .font(.title2)
                         .bold()
                         .foregroundColor(.white)
                         .opacity(0.8)
-                    }
+                    })
                 .frame(width: 300,height: 60)
                 .padding(.horizontal,5)
                 .background(Color(red: 0.132, green: 0.338, blue: 0.512))
                 .cornerRadius(15)
-                    
 
                 NavigationLink(
-                    destination: Text("Forget pass"),label: {Text("Don't have an account? Sign Up")
+                    destination: Text("No account"),label: {Text("Don't have an account? Sign Up")
                         .font(.subheadline)
                         .fontWeight(.heavy)
                         .accentColor(Color(red: 0.132, green: 0.338, blue: 0.512))})
