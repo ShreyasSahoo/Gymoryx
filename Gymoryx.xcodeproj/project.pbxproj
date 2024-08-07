@@ -15,6 +15,8 @@
 		B1C315922C635F0B00B9CD2E /* GymoryxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315912C635F0B00B9CD2E /* GymoryxUITests.swift */; };
 		B1C315942C635F0B00B9CD2E /* GymoryxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315932C635F0B00B9CD2E /* GymoryxUITestsLaunchTests.swift */; };
 		BBAFA9372C63AD8700DCE4FF /* loginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9362C63AD8700DCE4FF /* loginScreen.swift */; };
+		BBAFA9392C64201400DCE4FF /* SetBodyMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */; };
+		BBAFA93B2C64207600DCE4FF /* SetYourGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		B1C315912C635F0B00B9CD2E /* GymoryxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymoryxUITests.swift; sourceTree = "<group>"; };
 		B1C315932C635F0B00B9CD2E /* GymoryxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymoryxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BBAFA9362C63AD8700DCE4FF /* loginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginScreen.swift; sourceTree = "<group>"; };
+		BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBodyMeasurement.swift; sourceTree = "<group>"; };
+		BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetYourGoal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				B1C315762C635F0900B9CD2E /* GymoryxApp.swift */,
 				B1C315782C635F0900B9CD2E /* ContentView.swift */,
 				BBAFA9362C63AD8700DCE4FF /* loginScreen.swift */,
+				BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */,
+				BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */,
 				B1C3157A2C635F0B00B9CD2E /* Assets.xcassets */,
 				B1C3157C2C635F0B00B9CD2E /* Preview Content */,
 			);
@@ -260,9 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAFA93B2C64207600DCE4FF /* SetYourGoal.swift in Sources */,
 				BBAFA9372C63AD8700DCE4FF /* loginScreen.swift in Sources */,
 				B1C315792C635F0900B9CD2E /* ContentView.swift in Sources */,
 				B1C315772C635F0900B9CD2E /* GymoryxApp.swift in Sources */,
+				BBAFA9392C64201400DCE4FF /* SetBodyMeasurement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
