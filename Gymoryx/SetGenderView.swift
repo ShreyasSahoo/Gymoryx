@@ -13,6 +13,8 @@ enum Gender {
 }
 
 struct SetGenderView: View {
+    @ObservedObject var userData: UserPreferencesData
+
     @State private var selectedGender : Gender? = nil
     @State private var selectedDate : Date = Date()
     
@@ -33,6 +35,8 @@ struct SetGenderView: View {
                         VStack{
                             Button{
                                 setGender(gender: .female)
+                                userData.selectedGender = "Female"
+
                             } label : {
                                 Image("Female")
                                     .resizable()
@@ -46,6 +50,8 @@ struct SetGenderView: View {
                         VStack{
                             Button{
                                 setGender(gender: .male)
+                                userData.selectedGender = "Male"
+
                             } label : {
                                 Image("Male")
                                     .resizable()
@@ -75,6 +81,9 @@ struct SetGenderView: View {
                     )
                     .labelsHidden()
                     .datePickerStyle(WheelDatePickerStyle())
+                    .onChange(of: selectedDate) { newValue in
+                                           userData.selectedDate = newValue
+                                       }
                     Spacer()
                 }
             }
@@ -88,7 +97,3 @@ struct SetGenderView: View {
 }
 
 
-
-#Preview {
-    SetGenderView()
-}

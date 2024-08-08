@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SetBodyFatView: View {
+    @ObservedObject var userData: UserPreferencesData
+
     @State var bodyFat : String = ""
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
@@ -88,6 +90,9 @@ struct SetBodyFatView: View {
                             BodyTypeCard(bodyFat: $bodyFat, bodyType: bodyFatType.0, bodyTypeImage: bodyFatType.1)
                                
                         }
+                    } 
+                    .onChange(of: bodyFat) { newValue in
+                        userData.bodyFat = newValue
                     }
                     
                     
@@ -101,7 +106,7 @@ struct SetBodyFatView: View {
 }
 
 #Preview {
-    SetBodyFatView()
+    SetBodyFatView(userData: UserPreferencesData())
 }
 
 struct BodyTypeCard: View {
