@@ -92,8 +92,7 @@ struct SetBodyMeasurement:View {
     @State private var value1:CGFloat = 160
     var body: some View 
     {
-        NavigationView
-        {
+       
             VStack
             {
                 Text("Select Your Weight")
@@ -119,7 +118,7 @@ struct SetBodyMeasurement:View {
                 
                 Rectangle()
                     .fill(.gray)
-                    .frame(width: .infinity,height: 2)
+                    .frame(width: UIScreen.main.bounds.width*0.9, height: 1)
                     .padding()
                 
                     Text("Select Your Height")
@@ -146,7 +145,7 @@ struct SetBodyMeasurement:View {
             .foregroundColor(Color("navyblue"))
 
                 .padding(.vertical,20)
-        }
+        
     }
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct loginScreen: View {
+struct LoginScreen: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
@@ -59,7 +59,7 @@ struct loginScreen: View {
                 .foregroundColor(Color("navyblue"))
 
                 NavigationLink(
-                        destination: Text("Login"),label:
+                        destination: SetGoalsTabBar(),label:
                 {
                     Text("LOGIN")
                         .font(.title2)
@@ -123,9 +123,10 @@ struct loginScreen: View {
                 }
             }.padding()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    loginScreen()
+    LoginScreen()
 }

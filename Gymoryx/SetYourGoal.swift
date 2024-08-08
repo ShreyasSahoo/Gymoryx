@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct setYourGoal:View {
+struct SetYourGoal:View {
     var goals:[String] = ["Weight Loss","Gain Weight","Community Connect","Bodybuilding","Stamina & Mobility","Lifestyle Management","Strength & Conditioning","Injury Rehab"]
     var images:[String] = ["gymoryx"]
 
@@ -68,5 +68,5 @@ struct setYourGoal:View {
     }
 }
 #Preview {
-    setYourGoal()
+    SetYourGoal()
 }
