@@ -10,33 +10,10 @@ import SwiftUI
 struct SplashScreenOne: View {
     var body: some View {
         VStack{
-            Text("Health \nAnalytics")
-                .font(.largeTitle)
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.accent)
-                .bold()
-            
-            Image("S1")
+            Image("sa3")
                 .resizable()
                 .scaledToFit()
                 .frame(width: UIScreen.main.bounds.width)
-            
-            VStack{
-                Text("Push yourself to greatness and")
-                HStack{
-                    Text("acheive your fitness goals with ")
-                    Text("AI")
-                        .bold()
-                }
-                HStack{
-                    Text("powered")
-                        .bold()
-                    Text("workouts.")
-                        
-                }
-            }
-            
-            .font(.title3)
            
         }
     }
