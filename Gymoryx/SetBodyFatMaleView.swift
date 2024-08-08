@@ -14,62 +14,65 @@ struct SetBodyFatMaleView: View {
 
     
     var body: some View {
-        NavigationView{
-            VStack(){
-                Text("Body Fat Percent")
-                    .font(.title2)
-                    .bold()
-                    .foregroundStyle(Color.accentColor)
-                HStack{
-                    Spacer()
-                      
+        
+            ScrollView {
+                VStack(){
+                    Text("Body Fat Percent")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(Color.accentColor)
+                    HStack{
+                        Spacer()
+                          
 
-                    TextField("Body Fat", text: $bodyFat, prompt: Text("Enter Body Fat Percent")
-                        .foregroundStyle(.black) 
+                        TextField("Body Fat", text: $bodyFat, prompt: Text("Enter Body Fat Percent")
+                            .foregroundStyle(.black) 
+                            
+                        )
+                            .multilineTextAlignment(.center)
+                            .padding()
+                            .frame(width: UIScreen.main.bounds.width * 0.75)
+                            .background(
+                                                       Capsule()
+                                                           .foregroundColor(Color.gray.opacity(0.3))
+                                                   )
+                                                   .overlay(
+                                                       Capsule()
+                                                           .stroke(Color.accentColor, lineWidth: 1)
+                                                   )
+                            
+                            
+                        Spacer()
+                    }
+                   
                         
-                    )
-                        .multilineTextAlignment(.center)
-                        .padding()
-                        .frame(width: UIScreen.main.bounds.width * 0.75)
-                        .background(
-                                                   Capsule()
-                                                       .foregroundColor(Color.gray.opacity(0.3))
-                                               )
-                                               .overlay(
-                                                   Capsule()
-                                                       .stroke(Color.accentColor, lineWidth: 1)
-                                               )
-                        
-                        
+                    HStack(spacing: 20){
+                        Rectangle()
+                            .frame(width: UIScreen.main.bounds.width / 3,height: 2)
+                        Text("OR")
+                        Rectangle()
+                            .frame(width: UIScreen.main.bounds.width / 3,height: 2)
+                    }
+                       
+                    Text("Set Your Body Type")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(Color.accentColor)
+                    
+                    LazyVGrid(columns: columns,spacing: 15) {
+                        ForEach(1..<10){ _ in
+                            BodyTypeCard()
+                               
+                        }
+                    }
+                    
+                    
                     Spacer()
                 }
-               
-                    
-                HStack(spacing: 20){
-                    Rectangle()
-                        .frame(width: UIScreen.main.bounds.width / 3,height: 2)
-                    Text("OR")
-                    Rectangle()
-                        .frame(width: UIScreen.main.bounds.width / 3,height: 2)
-                }
-                   
-                Text("Set Your Body Type")
-                    .font(.title2)
-                    .bold()
-                    .foregroundStyle(Color.accentColor)
-                
-                LazyVGrid(columns: columns,spacing: 15) {
-                    ForEach(1..<10){ _ in
-                        BodyTypeCard()
-                           
-                    }
-                }
-                
-                
-                Spacer()
+                .padding()
             }
-            .padding()
-        }
+            .scrollIndicators(.never)
+        
     }
 }
 

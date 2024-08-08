@@ -21,62 +21,64 @@ struct SetGenderView: View {
     )) ?? Date()
     let endingDate : Date = Date()
     var body: some View {
-        NavigationView{
-            VStack(alignment:.center,spacing: 20){
-                Text("Select Your Gender")
-                    .font(.title2)
-                    .bold()
-                    .foregroundStyle(Color.accentColor)
-                
-                HStack(spacing:16){
-                    VStack{
-                        Button{
-                            setGender(gender: .female)
-                        } label : {
-                            Image("Female")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: (UIScreen.main.bounds.width/2) - 20)
-                                .clipShape(.rect(cornerRadius: 10))
-                                .shadow(radius: 2)
-                        }
-                        Text("Female")
-                    }
-                    VStack{
-                        Button{
-                            setGender(gender: .male)
-                        } label : {
-                            Image("Male")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: (UIScreen.main.bounds.width/2) - 20)
-                                .clipShape(.rect(cornerRadius: 10))
-                                .shadow(radius: 2)
-                        }
-                        
-                        Text("Male")
-                    }
-                }
-                .font(.title2)
-                .bold()
-                .foregroundStyle(Color.accentColor)
-                
-                Rectangle()
-                    .frame(width: UIScreen.main.bounds.width*0.9,height: 1)
+       
+            ScrollView{
+                VStack(alignment:.center,spacing: 20){
+                    Text("Select Your Gender")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(Color.accentColor)
                     
-                Text("Select Your Birth Date")
+                    HStack(spacing:16){
+                        VStack{
+                            Button{
+                                setGender(gender: .female)
+                            } label : {
+                                Image("Female")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: (UIScreen.main.bounds.width/2) - 20)
+                                    .clipShape(.rect(cornerRadius: 10))
+                                    .shadow(radius: 2)
+                            }
+                            Text("Female")
+                        }
+                        VStack{
+                            Button{
+                                setGender(gender: .male)
+                            } label : {
+                                Image("Male")
+                                    .resizable()
+                                    .scaledToFit()
+                                //                                .frame(width: (UIScreen.main.bounds.width/2) - 20)
+                                    .clipShape(.rect(cornerRadius: 10))
+                                    .shadow(radius: 2)
+                            }
+                            
+                            Text("Male")
+                        }
+                    }
                     .font(.title2)
                     .bold()
                     .foregroundStyle(Color.accentColor)
-                
-                DatePicker("", selection: $selectedDate,
-                           in: startingDate...endingDate, displayedComponents: [.date]
-                )
-                .labelsHidden()
+                    
+                    //                Rectangle()
+                    //                    .frame(width: UIScreen.main.bounds.width*0.9,height: 1)
+                    
+                    Text("Select Your Birth Date")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(Color.accentColor)
+                    
+                    DatePicker("", selection: $selectedDate,
+                               in: startingDate...endingDate, displayedComponents: [.date]
+                    )
+                    .labelsHidden()
                     .datePickerStyle(WheelDatePickerStyle())
-                Spacer()
+                    Spacer()
+                }
             }
-        }
+        
     }
         
     
