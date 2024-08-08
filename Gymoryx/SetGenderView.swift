@@ -50,7 +50,7 @@ struct SetGenderView: View {
                                 Image("Male")
                                     .resizable()
                                     .scaledToFit()
-                                //                                .frame(width: (UIScreen.main.bounds.width/2) - 20)
+                                    .frame(width: (UIScreen.main.bounds.width/2) - 20)
                                     .clipShape(.rect(cornerRadius: 10))
                                     .shadow(radius: 2)
                             }
@@ -62,8 +62,8 @@ struct SetGenderView: View {
                     .bold()
                     .foregroundStyle(Color.accentColor)
                     
-                    //                Rectangle()
-                    //                    .frame(width: UIScreen.main.bounds.width*0.9,height: 1)
+                                    Rectangle()
+                                        .frame(width: UIScreen.main.bounds.width*0.9,height: 1)
                     
                     Text("Select Your Birth Date")
                         .font(.title2)
@@ -84,49 +84,6 @@ struct SetGenderView: View {
     
     private func setGender(gender : Gender){
         selectedGender = gender
-    }
-}
-
-struct CustomDatePickerView: View {
-    @State private var selectedDay = 1
-    @State private var selectedMonth = 1
-    @State private var selectedYear = 2000
-
-    var body: some View {
-        VStack {
-            Text("Select Your Birth Date")
-                .font(.title2)
-                .bold()
-                .padding(.bottom, 20)
-            
-            HStack {
-                Picker("Day", selection: $selectedDay) {
-                    ForEach(1...31, id: \.self) {
-                        Text("\($0)").tag($0)
-                    }
-                }
-                .frame(maxWidth: .infinity)
-                .clipped()
-                
-                Picker("Month", selection: $selectedMonth) {
-                    ForEach(1...12, id: \.self) { index in
-                        Text(DateFormatter().monthSymbols[index - 1]).tag(index)
-                    }
-                }
-                .frame(maxWidth: .infinity)
-                .clipped()
-                
-                Picker("Year", selection: $selectedYear) {
-                    ForEach(1900...2023, id: \.self) {
-                        Text("\($0)").tag($0)
-                    }
-                }
-                .frame(maxWidth: .infinity)
-                .clipped()
-            }
-            .pickerStyle(WheelPickerStyle())
-        }
-        .padding()
     }
 }
 
