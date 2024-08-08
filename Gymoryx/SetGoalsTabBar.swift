@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct SetGoalsTabBar: View {
-    @State private var selectedIndex = 1
+    @State private var selectedIndex = 0
 
     var body: some View {
         NavigationView {
@@ -23,7 +23,7 @@ struct SetGoalsTabBar: View {
                         .tag(1)
                     SetBodyMeasurement()
                         .tag(2)
-                    SetBodyFatMaleView()
+                    SetBodyFatView()
                         .tag(3)
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -44,7 +44,7 @@ struct SetGoalsTabBar: View {
                                 .bold()
                         }
                     } else {            
-                        NavigationLink(destination: Text("Home")) {
+                        NavigationLink(destination: HomeView()) {
                             Text("LETS GO")
                                 .foregroundColor(.black)
                                 .bold()

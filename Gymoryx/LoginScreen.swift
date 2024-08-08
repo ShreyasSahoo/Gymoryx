@@ -11,6 +11,7 @@ struct LoginScreen: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var isLoginSuccessful: Bool = false
     var body: some View {
         
         NavigationView{
@@ -59,18 +60,24 @@ struct LoginScreen: View {
                 .foregroundColor(Color("navyblue"))
 
                 NavigationLink(
-                        destination: SetGoalsTabBar(),label:
-                {
-                    Text("LOGIN")
-                        .font(.title2)
-                        .bold()
-                        .foregroundColor(.white)
-                        .opacity(0.8)
-                    })
-                .frame(width: 300,height: 60)
-                .padding(.horizontal,5)
-                .background(Color("navyblue"))
-                .cornerRadius(15)
+                                 destination: SetGoalsTabBar(), // Replace DashboardView with your destination view
+                                 isActive: $isLoginSuccessful,
+                                 label: {
+                                     Button{
+                                         loginButtonPressed()
+                                     } label: {
+                                         Text("LOGIN")
+                                             .font(.title2)
+                                             .bold()
+                                             .foregroundColor(.white)
+                                             .opacity(0.8)
+                                     }
+                                     .frame(width: 300, height: 60)
+                                     .padding(.horizontal, 5)
+                                     .background(Color("navyblue"))
+                                     .cornerRadius(15)
+                                 }
+                             )
 
                 NavigationLink(
                     destination: Text("No account"),label: {Text("Don't have an account? Sign Up")
@@ -121,10 +128,17 @@ struct LoginScreen: View {
                             .shadow(radius: 2,y: 2)
                     }
                 }
+                Spacer()
             }.padding()
         }
         .navigationBarBackButtonHidden(true)
     }
+    func loginButtonPressed() {
+            NetworkManager.shared.fetchUserData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+               isLoginSuccessful = true
+           }
+       }
 }
 
 #Preview {

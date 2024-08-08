@@ -15,12 +15,16 @@
 		B1C315922C635F0B00B9CD2E /* GymoryxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315912C635F0B00B9CD2E /* GymoryxUITests.swift */; };
 		B1C315942C635F0B00B9CD2E /* GymoryxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315932C635F0B00B9CD2E /* GymoryxUITestsLaunchTests.swift */; };
 		B1C315A12C63C1C500B9CD2E /* SetGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315A02C63C1C500B9CD2E /* SetGenderView.swift */; };
-		B1C315A32C63C99700B9CD2E /* SetBodyFatMaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315A22C63C99700B9CD2E /* SetBodyFatMaleView.swift */; };
+		B1C315A32C63C99700B9CD2E /* SetBodyFatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315A22C63C99700B9CD2E /* SetBodyFatView.swift */; };
 		B1C315BF2C63F72F00B9CD2E /* SplashScreenTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315BE2C63F72F00B9CD2E /* SplashScreenTabBar.swift */; };
 		B1C315C12C63F87200B9CD2E /* SplashScreenOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315C02C63F87200B9CD2E /* SplashScreenOne.swift */; };
 		B1C315C32C63F9B100B9CD2E /* SplashScreenTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315C22C63F9B100B9CD2E /* SplashScreenTwo.swift */; };
 		B1C315C52C63FA3800B9CD2E /* SplashScreenThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315C42C63FA3800B9CD2E /* SplashScreenThree.swift */; };
 		B1C315C72C64C3C000B9CD2E /* SetGoalsTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315C62C64C3C000B9CD2E /* SetGoalsTabBar.swift */; };
+		B1C315C92C65064800B9CD2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315C82C65064800B9CD2E /* UserModel.swift */; };
+		B1C315CB2C65066E00B9CD2E /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */; };
+		B1C315CD2C652AE900B9CD2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */; };
+		B1C315CF2C652DAD00B9CD2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CE2C652DAD00B9CD2E /* HomeView.swift */; };
 		BBAFA9372C63AD8700DCE4FF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */; };
 		BBAFA9392C64201400DCE4FF /* SetBodyMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */; };
 		BBAFA93B2C64207600DCE4FF /* SetYourGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */; };
@@ -55,12 +59,16 @@
 		B1C315912C635F0B00B9CD2E /* GymoryxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymoryxUITests.swift; sourceTree = "<group>"; };
 		B1C315932C635F0B00B9CD2E /* GymoryxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymoryxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B1C315A02C63C1C500B9CD2E /* SetGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGenderView.swift; sourceTree = "<group>"; };
-		B1C315A22C63C99700B9CD2E /* SetBodyFatMaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBodyFatMaleView.swift; sourceTree = "<group>"; };
+		B1C315A22C63C99700B9CD2E /* SetBodyFatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBodyFatView.swift; sourceTree = "<group>"; };
 		B1C315BE2C63F72F00B9CD2E /* SplashScreenTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenTabBar.swift; sourceTree = "<group>"; };
 		B1C315C02C63F87200B9CD2E /* SplashScreenOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenOne.swift; sourceTree = "<group>"; };
 		B1C315C22C63F9B100B9CD2E /* SplashScreenTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenTwo.swift; sourceTree = "<group>"; };
 		B1C315C42C63FA3800B9CD2E /* SplashScreenThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenThree.swift; sourceTree = "<group>"; };
 		B1C315C62C64C3C000B9CD2E /* SetGoalsTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalsTabBar.swift; sourceTree = "<group>"; };
+		B1C315C82C65064800B9CD2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B1C315CE2C652DAD00B9CD2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBodyMeasurement.swift; sourceTree = "<group>"; };
 		BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetYourGoal.swift; sourceTree = "<group>"; };
@@ -122,10 +130,14 @@
 				B1C315C22C63F9B100B9CD2E /* SplashScreenTwo.swift */,
 				B1C315C42C63FA3800B9CD2E /* SplashScreenThree.swift */,
 				B1C315A02C63C1C500B9CD2E /* SetGenderView.swift */,
-				B1C315A22C63C99700B9CD2E /* SetBodyFatMaleView.swift */,
+				B1C315A22C63C99700B9CD2E /* SetBodyFatView.swift */,
 				BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */,
 				BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */,
 				BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */,
+				B1C315C82C65064800B9CD2E /* UserModel.swift */,
+				B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */,
+				B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */,
+				B1C315CE2C652DAD00B9CD2E /* HomeView.swift */,
 				B1C3157A2C635F0B00B9CD2E /* Assets.xcassets */,
 				B1C3157C2C635F0B00B9CD2E /* Preview Content */,
 			);
@@ -292,11 +304,15 @@
 				BBAFA93B2C64207600DCE4FF /* SetYourGoal.swift in Sources */,
 				BBAFA9372C63AD8700DCE4FF /* LoginScreen.swift in Sources */,
 				B1C315792C635F0900B9CD2E /* ContentView.swift in Sources */,
+				B1C315C92C65064800B9CD2E /* UserModel.swift in Sources */,
 				B1C315A12C63C1C500B9CD2E /* SetGenderView.swift in Sources */,
-				B1C315A32C63C99700B9CD2E /* SetBodyFatMaleView.swift in Sources */,
+				B1C315A32C63C99700B9CD2E /* SetBodyFatView.swift in Sources */,
 				B1C315C32C63F9B100B9CD2E /* SplashScreenTwo.swift in Sources */,
 				B1C315C52C63FA3800B9CD2E /* SplashScreenThree.swift in Sources */,
 				B1C315772C635F0900B9CD2E /* GymoryxApp.swift in Sources */,
+				B1C315CB2C65066E00B9CD2E /* KeychainHelper.swift in Sources */,
+				B1C315CD2C652AE900B9CD2E /* NetworkManager.swift in Sources */,
+				B1C315CF2C652DAD00B9CD2E /* HomeView.swift in Sources */,
 				B1C315C12C63F87200B9CD2E /* SplashScreenOne.swift in Sources */,
 				BBAFA9392C64201400DCE4FF /* SetBodyMeasurement.swift in Sources */,
 			);
