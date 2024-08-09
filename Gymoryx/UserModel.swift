@@ -14,3 +14,15 @@ struct User: Codable, Identifiable {
     var token: String
     var userPic: String
 }
+
+class UserPreferencesData: ObservableObject {
+    var id : Int = 0
+    @Published var goal: String = ""
+    @Published var selectedGender: String = ""
+    @Published var selectedDate: Date = Date()
+    @Published var weight: CGFloat = 60
+    @Published var height: CGFloat = 160
+    @Published var bodyFat: String = ""
+    @Published var bodyMuscleType: String = ""
+}
+

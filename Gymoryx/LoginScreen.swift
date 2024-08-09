@@ -60,7 +60,7 @@ struct LoginScreen: View {
                 .foregroundColor(Color("navyblue"))
 
                 NavigationLink(
-                                 destination: SetGoalsTabBar(), // Replace DashboardView with your destination view
+                                 destination: SetGoalsTabBar(userData:UserPreferencesData() ), // Replace DashboardView with your destination view
                                  isActive: $isLoginSuccessful,
                                  label: {
                                      Button{
