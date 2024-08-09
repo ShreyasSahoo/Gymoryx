@@ -1,16 +1,9 @@
-//
-//  SetBodyFatMaleView.swift
-//  Gymoryx
-//
-//  Created by Shreyas Sahoo on 07/08/24.
-//
-
 import SwiftUI
 
 struct SetBodyFatView: View {
     @ObservedObject var userData: UserPreferencesData
 
-    @State var bodyFat : String = ""
+    @State var bodyFat: String = ""
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
 
@@ -38,70 +31,59 @@ struct SetBodyFatView: View {
         ("45%+", "body_fat_nine_female")
     ]
     
-    
     var body: some View {
-        
-            ScrollView {
-                VStack(){
-                    Text("Body Fat Percent")
-                        .font(.title2)
-                        .bold()
-                        .foregroundStyle(Color.accentColor)
-                    HStack{
-                        Spacer()
-                          
-
-                        TextField("Body Fat", text: $bodyFat, prompt: Text("Enter Body Fat Percent")
-                            .foregroundStyle(.black) 
-                            
-                        )
-                            .multilineTextAlignment(.center)
-                            .padding()
-                            .frame(width: UIScreen.main.bounds.width * 0.75)
-                            .background(
-                                                       Capsule()
-                                                           .foregroundColor(Color.gray.opacity(0.3))
-                                                   )
-                                                   .overlay(
-                                                       Capsule()
-                                                           .stroke(Color.accentColor, lineWidth: 1)
-                                                   )
-                            
-                            
-                        Spacer()
-                    }
-                   
-                        
-                    HStack(spacing: 20){
-                        Rectangle()
-                            .frame(width: UIScreen.main.bounds.width / 3,height: 2)
-                        Text("OR")
-                        Rectangle()
-                            .frame(width: UIScreen.main.bounds.width / 3,height: 2)
-                    }
-                       
-                    Text("Set Your Body Type")
-                        .font(.title2)
-                        .bold()
-                        .foregroundStyle(Color.accentColor)
-                    
-                    LazyVGrid(columns: columns,spacing: 15) {
-                        ForEach(userData.selectedGender == "Female" ? bodyFatTypesFemale : bodyFatTypesMale, id: \.0) { bodyFatType in
-                            BodyTypeCard(bodyFat: $bodyFat, bodyType: bodyFatType.0, bodyTypeImage: bodyFatType.1)
-                               
-                        }
-                    } 
-                    .onChange(of: bodyFat) { newValue in
-                        userData.bodyFat = newValue
-                    }
-                    
-                    
+        ScrollView {
+            VStack(){
+                Text("Body Fat Percent")
+                    .font(.title2)
+                    .bold()
+                    .foregroundStyle(Color.accentColor)
+                HStack{
+                    Spacer()
+                    TextField("Body Fat", text: $bodyFat, prompt: Text("Enter Body Fat Percent")
+                        .foregroundStyle(.black)
+                    )
+                    .multilineTextAlignment(.center)
+                    .padding()
+                    .frame(width: UIScreen.main.bounds.width * 0.75)
+                    .background(
+                        Capsule()
+                            .foregroundColor(Color.gray.opacity(0.3))
+                    )
+                    .overlay(
+                        Capsule()
+                            .stroke(Color.accentColor, lineWidth: 1)
+                    )
                     Spacer()
                 }
-                .padding()
+                
+                HStack(spacing: 20){
+                    Rectangle()
+                        .frame(width: UIScreen.main.bounds.width / 3, height: 2)
+                    Text("OR")
+                    Rectangle()
+                        .frame(width: UIScreen.main.bounds.width / 3, height: 2)
+                }
+                
+                Text("Set Your Body Type")
+                    .font(.title2)
+                    .bold()
+                    .foregroundStyle(Color.accentColor)
+                
+                LazyVGrid(columns: columns, spacing: 15) {
+                    ForEach(userData.selectedGender == "Female" ? bodyFatTypesFemale : bodyFatTypesMale, id: \.0) { bodyFatType in
+                        BodyTypeCard(bodyFat: $bodyFat, bodyType: bodyFatType.0, bodyTypeImage: bodyFatType.1)
+                    }
+                }
+                .onChange(of: bodyFat) { newValue in
+                    userData.bodyFat = newValue
+                }
+                
+                Spacer()
             }
-            .scrollIndicators(.never)
-        
+            .padding()
+        }
+        .scrollIndicators(.never)
     }
 }
 
@@ -110,17 +92,17 @@ struct SetBodyFatView: View {
 }
 
 struct BodyTypeCard: View {
-    @Binding var bodyFat : String
-    @State  var bodyType : String
-    @State  var bodyTypeImage : String
+    @Binding var bodyFat: String
+    var bodyType: String
+    var bodyTypeImage: String
+    
     var body: some View {
-        
-        Button{
+        Button {
             bodyFat = bodyType
             print(bodyFat)
-        } label : {
+        } label: {
             HStack {
-                VStack(spacing:0){
+                VStack(spacing: 0) {
                     Text(bodyType)
                 }
                 
@@ -135,10 +117,9 @@ struct BodyTypeCard: View {
             .bold()
             .padding(.leading, 10)
             .frame(width: UIScreen.main.bounds.width / 2 - 15)
-            .background(Color.white)
+            .background(bodyFat == bodyType ? Color.accentColor.opacity(0.2) : Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 15))
             .shadow(color: .black.opacity(0.2), radius: 1, x: 0, y: 2)
         }
-        
     }
 }
