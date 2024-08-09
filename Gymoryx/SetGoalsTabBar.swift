@@ -17,12 +17,16 @@ struct SetGoalsTabBar: View {
                 TabView(selection: $selectedIndex) {
                     SetYourGoal(userData: userData)
                         .tag(0)
+                        .gesture(dragGesture()) // Add custom gesture
                     SetGenderView(userData: userData)
                         .tag(1)
+                        .gesture(dragGesture()) // Add custom gesture
                     SetBodyMeasurement(userData: userData)
                         .tag(2)
+                        .gesture(dragGesture()) // Add custom gesture
                     SetBodyFatView(userData: userData)
                         .tag(3)
+                        .gesture(dragGesture()) // Add custom gesture
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
@@ -84,7 +88,8 @@ struct SetGoalsTabBar: View {
         case 0:
             return !userData.goal.isEmpty
         case 1:
-            return !userData.selectedGender.isEmpty && userData.selectedDate != Date.distantPast
+            // Check if both the gender and date are set correctly
+            return userData.selectedGender != "" && userData.selectedDate != Date.distantPast
         case 2:
             return userData.weight > 0 && userData.height > 0
         case 3:
@@ -93,7 +98,7 @@ struct SetGoalsTabBar: View {
             return false
         }
     }
-    
+
     private func submitData() {
         isLoading = true
         let url = URL(string: "https://66b53e3eb5ae2d11eb632337.mockapi.io/usersPreferencesData")!
@@ -130,6 +135,17 @@ struct SetGoalsTabBar: View {
                 }
             }
         }.resume()
+    }
+    
+    private func dragGesture() -> some Gesture {
+        DragGesture()
+            .onEnded { value in
+                if value.translation.width < 0 && isCurrentStepComplete() { // Swipe left
+                    selectedIndex = min(selectedIndex + 1, 3)
+                } else if value.translation.width > 0 { // Swipe right
+                    selectedIndex = max(selectedIndex - 1, 0)
+                }
+            }
     }
 }
 
