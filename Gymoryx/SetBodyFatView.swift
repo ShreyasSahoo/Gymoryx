@@ -86,7 +86,7 @@ struct SetBodyFatView: View {
                         .foregroundStyle(Color.accentColor)
                     
                     LazyVGrid(columns: columns,spacing: 15) {
-                        ForEach(bodyFatTypesFemale, id: \.0) { bodyFatType in
+                        ForEach(userData.selectedGender == "Female" ? bodyFatTypesFemale : bodyFatTypesMale, id: \.0) { bodyFatType in
                             BodyTypeCard(bodyFat: $bodyFat, bodyType: bodyFatType.0, bodyTypeImage: bodyFatType.1)
                                
                         }
