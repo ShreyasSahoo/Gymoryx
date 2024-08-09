@@ -43,7 +43,11 @@ struct SetGenderView: View {
                                     .scaledToFit()
                                     .frame(width: (UIScreen.main.bounds.width/2) - 20)
                                     .clipShape(.rect(cornerRadius: 10))
-                                    .shadow(radius: 2)
+                                    .shadow(radius: 2)  
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(selectedGender == .female ? Color.gray.opacity(0.3) : Color.clear)
+                                    )
                             }
                             Text("Female")
                         }
@@ -58,7 +62,11 @@ struct SetGenderView: View {
                                     .scaledToFit()
                                     .frame(width: (UIScreen.main.bounds.width/2) - 20)
                                     .clipShape(.rect(cornerRadius: 10))
-                                    .shadow(radius: 2)
+                                    .shadow(radius: 2)                      
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(selectedGender == .male ? Color.gray.opacity(0.3) : Color.clear)
+                                    )
                             }
                             
                             Text("Male")

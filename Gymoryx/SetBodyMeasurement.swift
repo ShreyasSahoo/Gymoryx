@@ -52,10 +52,10 @@ struct WheelPicker: View {
             .overlay(alignment: .center) {
                 Rectangle()
                     .frame(width: 60, height: 5)
-                    .padding(.top, 20)
+                    .padding(.top, 20).padding(.trailing,5)
                     .foregroundColor(Color("navyblue")) // Custom color
             }
-            .safeAreaPadding(.horizontal, horizontalPadding)
+            .safeAreaPadding(.horizontal, horizontalPadding-10)
             .onAppear {
                 if !isLoaded { isLoaded = true }
             }   
@@ -64,10 +64,10 @@ struct WheelPicker: View {
     }
     
     struct Config: Equatable {
-        var count: Int
-        var steps: Int = 10
-        var spacing: CGFloat = 5
-        var multiplier: Int = 10
+        var count: Int = 50
+        var steps: Int = 5
+        var spacing: CGFloat = 15
+        var multiplier: Int = 5
         var showText: Bool = true
     }
 }
@@ -75,7 +75,7 @@ struct WheelPicker: View {
 struct SetBodyMeasurement: View {
     @ObservedObject var userData: UserPreferencesData
     
-    @State private var config: WheelPicker.Config = .init(count: 30, steps: 5, spacing: 15, multiplier: 10)
+    @State private var config: WheelPicker.Config = .init(count: 200, steps: 10, spacing: 15, multiplier: 1)
     @State private var weight: CGFloat = 60
     @State private var height: CGFloat = 160
     
@@ -101,7 +101,7 @@ struct SetBodyMeasurement: View {
             WheelPicker(config: config, value: $weight)
                 .onChange(of: weight) { newValue in
                     userData.weight = newValue
-                }
+                }.padding(.leading,20)
             
             Rectangle()
                 .fill(.gray)

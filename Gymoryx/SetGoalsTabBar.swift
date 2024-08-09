@@ -29,22 +29,20 @@ struct SetGoalsTabBar: View {
                         .tag(1)
                     SetBodyMeasurement(userData: userData)
                         .tag(2)
-                    SetBodyMuscleCategory(userData: userData, selectedBodyMuscleCategory: .constant(""))
-                        .tag(3)
                     SetBodyFatView(userData: userData)
-                        .tag(4)
+                        .tag(3)
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
                 HStack {
-                    PageIndicator(currentIndex: $selectedIndex, total: 5)
+                    PageIndicator(currentIndex: $selectedIndex, total: 4)
                     
                     Spacer()
                     
-                    if selectedIndex != 4{
+                    if selectedIndex != 3{
                         Button {
                             withAnimation {
-                                selectedIndex = (selectedIndex + 1) % 5
+                                selectedIndex = (selectedIndex + 1) % 4
                             }
                         } label: {
                             Text("NEXT")
