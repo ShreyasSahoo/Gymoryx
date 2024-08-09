@@ -1,12 +1,4 @@
-//
-//  SetGoalsTabBar.swift
-//  Gymoryx
-//
-//  Created by Shreyas Sahoo on 08/08/24.
-//
-
 import SwiftUI
-
 
 struct SetGoalsTabBar: View {
     @ObservedObject var userData: UserPreferencesData
@@ -39,28 +31,19 @@ struct SetGoalsTabBar: View {
                     
                     Spacer()
                     
-                    if selectedIndex != 3{
-                        Button {
-                            withAnimation {
-                                selectedIndex = (selectedIndex + 1) % 4
-                            }
-                        } label: {
-                            Text("NEXT")
-                                .foregroundColor(.black)
-                                .bold()
-                        }
-                    } else {            
-                        Button(action: {
-                            submitData()
-                        }) {
-                            Text("LET'S GO")
-                                .foregroundColor(.black)
-                                .bold()
-                        }
+                    Button(action: {
+                        handleNextButtonTap()
+                    }) {
+                        Text(selectedIndex == 3 ? "LET'S GO" : "NEXT")
+                            .foregroundColor(isCurrentStepComplete() ? .black : .gray)
+                            .bold()
+                            .padding()
+                        
                     }
-                    
+                    .disabled(!isCurrentStepComplete())
                 }
                 .padding()
+                
                 if isLoading {
                     ProgressView()
                 }
@@ -83,8 +66,32 @@ struct SetGoalsTabBar: View {
                 )
             )
         }
-        
         .navigationBarBackButtonHidden(true)
+    }
+    
+    private func handleNextButtonTap() {
+        if selectedIndex == 3 {
+            submitData()
+        } else {
+            withAnimation {
+                selectedIndex = (selectedIndex + 1) % 4
+            }
+        }
+    }
+    
+    private func isCurrentStepComplete() -> Bool {
+        switch selectedIndex {
+        case 0:
+            return !userData.goal.isEmpty
+        case 1:
+            return !userData.selectedGender.isEmpty && userData.selectedDate != Date.distantPast
+        case 2:
+            return userData.weight > 0 && userData.height > 0
+        case 3:
+            return !userData.bodyFat.isEmpty
+        default:
+            return false
+        }
     }
     
     private func submitData() {
@@ -118,15 +125,14 @@ struct SetGoalsTabBar: View {
                     
                 } else {
                     errorMessage = "Failed to submit data."
-                    print(response)
-                    print(error)
+                    print(response ?? "No response")
+                    print(error ?? "No error")
                 }
             }
         }.resume()
-    }}
-
+    }
+}
 
 #Preview {
     SetGoalsTabBar(userData: UserPreferencesData())
 }
-
