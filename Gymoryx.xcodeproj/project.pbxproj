@@ -25,6 +25,7 @@
 		B1C315CB2C65066E00B9CD2E /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */; };
 		B1C315CD2C652AE900B9CD2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */; };
 		B1C315CF2C652DAD00B9CD2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CE2C652DAD00B9CD2E /* HomeView.swift */; };
+		B1C315D12C65CB5200B9CD2E /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315D02C65CB5200B9CD2E /* SplashScreen.swift */; };
 		BB27DC092C6569880082FB4E /* SetBodyMuscleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */; };
 		BBAFA9372C63AD8700DCE4FF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */; };
 		BBAFA9392C64201400DCE4FF /* SetBodyMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */; };
@@ -70,6 +71,7 @@
 		B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B1C315CE2C652DAD00B9CD2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B1C315D02C65CB5200B9CD2E /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBodyMuscleCategory.swift; sourceTree = "<group>"; };
 		BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBodyMeasurement.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				B1C315762C635F0900B9CD2E /* GymoryxApp.swift */,
 				B1C315782C635F0900B9CD2E /* ContentView.swift */,
+				B1C315D02C65CB5200B9CD2E /* SplashScreen.swift */,
 				B1C315BE2C63F72F00B9CD2E /* SplashScreenTabBar.swift */,
 				B1C315C02C63F87200B9CD2E /* SplashScreenOne.swift */,
 				B1C315C22C63F9B100B9CD2E /* SplashScreenTwo.swift */,
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C315D12C65CB5200B9CD2E /* SplashScreen.swift in Sources */,
 				B1C315BF2C63F72F00B9CD2E /* SplashScreenTabBar.swift in Sources */,
 				B1C315C72C64C3C000B9CD2E /* SetGoalsTabBar.swift in Sources */,
 				BBAFA93B2C64207600DCE4FF /* SetYourGoal.swift in Sources */,

@@ -11,7 +11,7 @@ import SwiftUI
 struct GymoryxApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashScreenTabBar()
+            ContentView()
         }
     }
 }
