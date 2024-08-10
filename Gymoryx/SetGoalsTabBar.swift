@@ -1,12 +1,4 @@
-//
-//  SetGoalsTabBar.swift
-//  Gymoryx
-//
-//  Created by Shreyas Sahoo on 08/08/24.
-//
-
 import SwiftUI
-
 
 struct SetGoalsTabBar: View {
     @ObservedObject var userData: UserPreferencesData
@@ -25,44 +17,37 @@ struct SetGoalsTabBar: View {
                 TabView(selection: $selectedIndex) {
                     SetYourGoal(userData: userData)
                         .tag(0)
+                        .gesture(dragGesture()) // Add custom gesture
                     SetGenderView(userData: userData)
                         .tag(1)
+                        .gesture(dragGesture()) // Add custom gesture
                     SetBodyMeasurement(userData: userData)
                         .tag(2)
-                    SetBodyMuscleCategory(userData: userData, selectedBodyMuscleCategory: .constant(""))
-                        .tag(3)
+                        .gesture(dragGesture()) // Add custom gesture
                     SetBodyFatView(userData: userData)
-                        .tag(4)
+                        .tag(3)
+                        .gesture(dragGesture()) // Add custom gesture
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
                 HStack {
-                    PageIndicator(currentIndex: $selectedIndex, total: 5)
+                    PageIndicator(currentIndex: $selectedIndex, total: 4)
                     
                     Spacer()
                     
-                    if selectedIndex != 4{
-                        Button {
-                            withAnimation {
-                                selectedIndex = (selectedIndex + 1) % 5
-                            }
-                        } label: {
-                            Text("NEXT")
-                                .foregroundColor(.black)
-                                .bold()
-                        }
-                    } else {            
-                        Button(action: {
-                            submitData()
-                        }) {
-                            Text("LET'S GO")
-                                .foregroundColor(.black)
-                                .bold()
-                        }
+                    Button(action: {
+                        handleNextButtonTap()
+                    }) {
+                        Text(selectedIndex == 3 ? "LET'S GO" : "NEXT")
+                            .foregroundColor(isCurrentStepComplete() ? .black : .gray)
+                            .bold()
+                            .padding()
+                        
                     }
-                    
+                    .disabled(!isCurrentStepComplete())
                 }
                 .padding()
+                
                 if isLoading {
                     ProgressView()
                 }
@@ -85,10 +70,35 @@ struct SetGoalsTabBar: View {
                 )
             )
         }
-        
         .navigationBarBackButtonHidden(true)
     }
     
+    private func handleNextButtonTap() {
+        if selectedIndex == 3 {
+            submitData()
+        } else {
+            withAnimation {
+                selectedIndex = (selectedIndex + 1) % 4
+            }
+        }
+    }
+    
+    private func isCurrentStepComplete() -> Bool {
+        switch selectedIndex {
+        case 0:
+            return !userData.goal.isEmpty
+        case 1:
+            // Check if both the gender and date are set correctly
+            return userData.selectedGender != "" && userData.selectedDate != Date.distantPast
+        case 2:
+            return userData.weight > 0 && userData.height > 0
+        case 3:
+            return !userData.bodyFat.isEmpty
+        default:
+            return false
+        }
+    }
+
     private func submitData() {
         isLoading = true
         let url = URL(string: "https://66b53e3eb5ae2d11eb632337.mockapi.io/usersPreferencesData")!
@@ -120,15 +130,25 @@ struct SetGoalsTabBar: View {
                     
                 } else {
                     errorMessage = "Failed to submit data."
-                    print(response)
-                    print(error)
+                    print(response ?? "No response")
+                    print(error ?? "No error")
                 }
             }
         }.resume()
-    }}
-
+    }
+    
+    private func dragGesture() -> some Gesture {
+        DragGesture()
+            .onEnded { value in
+                if value.translation.width < 0 && isCurrentStepComplete() { // Swipe left
+                    selectedIndex = min(selectedIndex + 1, 3)
+                } else if value.translation.width > 0 { // Swipe right
+                    selectedIndex = max(selectedIndex - 1, 0)
+                }
+            }
+    }
+}
 
 #Preview {
     SetGoalsTabBar(userData: UserPreferencesData())
 }
-
