@@ -7,31 +7,48 @@
 
 import SwiftUI
 
-
 struct SplashScreenTabBar: View {
     @State private var selectedIndex = 0
+    @State private var dragOffset: CGFloat = 0.0
 
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
-                
+
                 TabView(selection: $selectedIndex) {
-                   SplashScreenOne()
+                    SplashScreenOne()
                         .tag(0)
                     SplashScreenTwo()
                         .tag(1)
                     SplashScreenThree()
                         .tag(2)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    dragOffset = value.translation.width
+                                }
+                                .onEnded { value in
+                                    if dragOffset < -100 {
+                                        selectedIndex = 3
+                                    }
+                                    dragOffset = 0
+                                }
+                        )
+                        .background(
+                            NavigationLink(destination: LoginScreen(), isActive: .constant(selectedIndex == 3)) {
+                                EmptyView()
+                            }
+                        )
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // Disable default page indicator
-                
+
                 HStack {
                     PageIndicator(currentIndex: $selectedIndex, total: 3)
-                    
+
                     Spacer()
-                    
-                    if selectedIndex != 2{
+
+                    if selectedIndex != 2 {
                         Button {
                             withAnimation {
                                 selectedIndex = (selectedIndex + 1) % 3
@@ -48,7 +65,6 @@ struct SplashScreenTabBar: View {
                                 .bold()
                         }
                     }
-                    
                 }
                 .padding()
             }
@@ -71,7 +87,6 @@ struct PageIndicator: View {
         }
     }
 }
-
 
 #Preview {
     SplashScreenTabBar()
