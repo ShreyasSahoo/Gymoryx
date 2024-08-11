@@ -11,7 +11,7 @@ struct SplashScreenThree: View {
     var body: some View {
         VStack{
 
-            Image("sa3")
+            Image("sa1")
                 .resizable()
                 .scaledToFit()
                 .frame(width: UIScreen.main.bounds.width)

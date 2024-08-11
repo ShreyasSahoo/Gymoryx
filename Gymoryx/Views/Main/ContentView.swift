@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if showSplash {
-                SplashScreenView()
+                SplashView()
                     .onAppear {
                        
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

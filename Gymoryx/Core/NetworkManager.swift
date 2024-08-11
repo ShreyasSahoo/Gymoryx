@@ -43,8 +43,8 @@ class NetworkManager {
     
     private func saveUserData(user: User) {
         // Save token securely in Keychain
-        KeychainHelper.saveToken(token: user.token)
-        
+       let isSaved = KeychainHelper.saveToken(token: user.token)
+        print(isSaved)
         // Save other properties in UserDefaults
         UserDefaults.standard.set(user.name, forKey: "userName")
         UserDefaults.standard.set(user.email, forKey: "userEmail")

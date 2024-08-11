@@ -1,5 +1,5 @@
 //
-//  SplashScreen.swift
+//  SplashView.swift
 //  Gymoryx
 //
 //  Created by Shreyas Sahoo on 09/08/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SplashScreenView: View {
+struct SplashView: View {
     var body: some View {
         VStack {
             Spacer()
@@ -20,5 +20,5 @@ struct SplashScreenView: View {
     }
 }
 #Preview {
-    SplashScreenView()
+    SplashView()
 }

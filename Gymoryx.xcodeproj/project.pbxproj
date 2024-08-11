@@ -25,7 +25,7 @@
 		B1C315CB2C65066E00B9CD2E /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */; };
 		B1C315CD2C652AE900B9CD2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */; };
 		B1C315CF2C652DAD00B9CD2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CE2C652DAD00B9CD2E /* HomeView.swift */; };
-		B1C315D12C65CB5200B9CD2E /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315D02C65CB5200B9CD2E /* SplashScreen.swift */; };
+		B1C315D12C65CB5200B9CD2E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315D02C65CB5200B9CD2E /* SplashView.swift */; };
 		BB27DC092C6569880082FB4E /* SetBodyMuscleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */; };
 		BBAFA9372C63AD8700DCE4FF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */; };
 		BBAFA9392C64201400DCE4FF /* SetBodyMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */; };
@@ -71,7 +71,7 @@
 		B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B1C315CE2C652DAD00B9CD2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		B1C315D02C65CB5200B9CD2E /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		B1C315D02C65CB5200B9CD2E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBodyMuscleCategory.swift; sourceTree = "<group>"; };
 		BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBodyMeasurement.swift; sourceTree = "<group>"; };
@@ -103,12 +103,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B103CC112C67297A00B60710 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B1C315762C635F0900B9CD2E /* GymoryxApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B103CC122C67298700B60710 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */,
+				B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B103CC132C6729A200B60710 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1C315C82C65064800B9CD2E /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B103CC142C6729BB00B60710 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B103CC182C672A4500B60710 /* SetPreferences */,
+				B103CC172C672A2600B60710 /* Main */,
+				B103CC162C672A1300B60710 /* Authentication */,
+				B103CC152C6729C200B60710 /* SplashScreens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B103CC152C6729C200B60710 /* SplashScreens */ = {
+			isa = PBXGroup;
+			children = (
+				B1C315BE2C63F72F00B9CD2E /* SplashScreenTabBar.swift */,
+				B1C315D02C65CB5200B9CD2E /* SplashView.swift */,
+				B1C315C02C63F87200B9CD2E /* SplashScreenOne.swift */,
+				B1C315C22C63F9B100B9CD2E /* SplashScreenTwo.swift */,
+				B1C315C42C63FA3800B9CD2E /* SplashScreenThree.swift */,
+			);
+			path = SplashScreens;
+			sourceTree = "<group>";
+		};
+		B103CC162C672A1300B60710 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		B103CC172C672A2600B60710 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B1C315782C635F0900B9CD2E /* ContentView.swift */,
+				B1C315CE2C652DAD00B9CD2E /* HomeView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B103CC182C672A4500B60710 /* SetPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				B1C315C62C64C3C000B9CD2E /* SetGoalsTabBar.swift */,
+				BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */,
+				B1C315A02C63C1C500B9CD2E /* SetGenderView.swift */,
+				BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */,
+				B1C315A22C63C99700B9CD2E /* SetBodyFatView.swift */,
+				BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */,
+			);
+			path = SetPreferences;
+			sourceTree = "<group>";
+		};
+		B103CC192C672A8500B60710 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B1C3157A2C635F0B00B9CD2E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B103CC1A2C672AA500B60710 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B1C315902C635F0B00B9CD2E /* GymoryxUITests */,
+				B1C315862C635F0B00B9CD2E /* GymoryxTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		B1C3156A2C635F0900B9CD2E = {
 			isa = PBXGroup;
 			children = (
 				B1C315752C635F0900B9CD2E /* Gymoryx */,
-				B1C315862C635F0B00B9CD2E /* GymoryxTests */,
-				B1C315902C635F0B00B9CD2E /* GymoryxUITests */,
 				B1C315742C635F0900B9CD2E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,25 +219,12 @@
 		B1C315752C635F0900B9CD2E /* Gymoryx */ = {
 			isa = PBXGroup;
 			children = (
-				B1C315762C635F0900B9CD2E /* GymoryxApp.swift */,
-				B1C315782C635F0900B9CD2E /* ContentView.swift */,
-				B1C315D02C65CB5200B9CD2E /* SplashScreen.swift */,
-				B1C315BE2C63F72F00B9CD2E /* SplashScreenTabBar.swift */,
-				B1C315C02C63F87200B9CD2E /* SplashScreenOne.swift */,
-				B1C315C22C63F9B100B9CD2E /* SplashScreenTwo.swift */,
-				B1C315C42C63FA3800B9CD2E /* SplashScreenThree.swift */,
-				BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */,
-				B1C315C82C65064800B9CD2E /* UserModel.swift */,
-				B1C315C62C64C3C000B9CD2E /* SetGoalsTabBar.swift */,
-				BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */,
-				B1C315A02C63C1C500B9CD2E /* SetGenderView.swift */,
-				BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */,
-				B1C315A22C63C99700B9CD2E /* SetBodyFatView.swift */,
-				BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */,
-				B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */,
-				B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */,
-				B1C315CE2C652DAD00B9CD2E /* HomeView.swift */,
-				B1C3157A2C635F0B00B9CD2E /* Assets.xcassets */,
+				B103CC1A2C672AA500B60710 /* Tests */,
+				B103CC192C672A8500B60710 /* Resources */,
+				B103CC142C6729BB00B60710 /* Views */,
+				B103CC132C6729A200B60710 /* Models */,
+				B103CC122C67298700B60710 /* Core */,
+				B103CC112C67297A00B60710 /* App */,
 				B1C3157C2C635F0B00B9CD2E /* Preview Content */,
 			);
 			path = Gymoryx;
@@ -305,7 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C315D12C65CB5200B9CD2E /* SplashScreen.swift in Sources */,
+				B1C315D12C65CB5200B9CD2E /* SplashView.swift in Sources */,
 				B1C315BF2C63F72F00B9CD2E /* SplashScreenTabBar.swift in Sources */,
 				B1C315C72C64C3C000B9CD2E /* SetGoalsTabBar.swift in Sources */,
 				BBAFA93B2C64207600DCE4FF /* SetYourGoal.swift in Sources */,
