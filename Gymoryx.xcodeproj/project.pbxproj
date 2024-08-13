@@ -30,6 +30,8 @@
 		BBAFA9372C63AD8700DCE4FF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */; };
 		BBAFA9392C64201400DCE4FF /* SetBodyMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */; };
 		BBAFA93B2C64207600DCE4FF /* SetYourGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */; };
+		BBD300DF2C6A7341005FBB2A /* RegisterUserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD300DE2C6A7341005FBB2A /* RegisterUserScreen.swift */; };
+		BBD300E12C6A7351005FBB2A /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD300E02C6A7351005FBB2A /* ForgotPasswordScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBodyMeasurement.swift; sourceTree = "<group>"; };
 		BBAFA93A2C64207600DCE4FF /* SetYourGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetYourGoal.swift; sourceTree = "<group>"; };
+		BBD300DE2C6A7341005FBB2A /* RegisterUserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserScreen.swift; sourceTree = "<group>"; };
+		BBD300E02C6A7351005FBB2A /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */,
+				BBD300DE2C6A7341005FBB2A /* RegisterUserScreen.swift */,
+				BBD300E02C6A7351005FBB2A /* ForgotPasswordScreen.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -386,7 +392,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1C315D12C65CB5200B9CD2E /* SplashView.swift in Sources */,
+				BBD300E12C6A7351005FBB2A /* ForgotPasswordScreen.swift in Sources */,
 				B1C315BF2C63F72F00B9CD2E /* SplashScreenTabBar.swift in Sources */,
+				BBD300DF2C6A7341005FBB2A /* RegisterUserScreen.swift in Sources */,
 				B1C315C72C64C3C000B9CD2E /* SetGoalsTabBar.swift in Sources */,
 				BBAFA93B2C64207600DCE4FF /* SetYourGoal.swift in Sources */,
 				BBAFA9372C63AD8700DCE4FF /* LoginScreen.swift in Sources */,
