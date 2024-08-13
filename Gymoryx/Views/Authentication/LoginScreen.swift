@@ -5,7 +5,8 @@ struct LoginScreen: View {
     @State private var password: String = ""
     @State private var isPasswordVisible: Bool = false 
     @State private var isLoginSuccessful: Bool = false
-    
+    @State private var showToast: Bool = false
+    @State private var toastMessage: String = ""
     var body: some View {
         NavigationView {
             VStack {
@@ -140,14 +141,64 @@ struct LoginScreen: View {
         }
         .navigationBarBackButtonHidden(true)
     }
-    
     func loginButtonPressed() {
-        NetworkManager.shared.fetchUserData()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            isLoginSuccessful = true
-        }
-    }
-}
+         // URL to the server
+         let urlString = "https://gymoryx.in/app/getapi"
+         
+         // Create the URL object
+         guard let url = URL(string: urlString) else {
+             showToastMessage("Invalid URL")
+             return
+         }
+         
+         // Prepare the parameters
+         let passwordEncoded = password.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+         let emailEncoded = email.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+         let apiKey = "608DFF6wOyQQUvwAO6LwJ60KFDzjt4QE5prQ6"
+         let apiKeyEncoded = apiKey.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+         let method = "login"
+         
+         // Create the request body
+         let postData = "password=\(passwordEncoded)&email=\(emailEncoded)&api_key=\(apiKeyEncoded)&method=\(method)"
+         
+         // Create the request
+         var request = URLRequest(url: url)
+         request.httpMethod = "POST"
+         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+         request.httpBody = postData.data(using: .utf8)
+         
+         // Send the request
+         let task = URLSession.shared.dataTask(with: request) { data, response, error in
+             if let error = error {
+                 DispatchQueue.main.async {
+                     showToastMessage("Error: \(error.localizedDescription)")
+                     print("Error: \(error.localizedDescription)")
+                 }
+                 return
+             }
+             
+             if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                 print("Response: \(responseString)")
+                 DispatchQueue.main.async {
+                     
+                     if responseString.contains("success") { // Adjust based on actual success criteria
+                         isLoginSuccessful = true
+                     } else {
+                         showToastMessage("Login failed. Please try again.")
+                     }
+                 }
+             }
+         }
+         
+         task.resume()
+     }
+     
+     func showToastMessage(_ message: String) {
+         toastMessage = message
+         showToast = true
+     }
+ }
+
 
 #Preview {
     LoginScreen()
