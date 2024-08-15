@@ -13,7 +13,7 @@ struct HomeView: View {
     @AppStorage("userName") private var userName: String = ""
     @AppStorage("userEmail") private var userEmail: String = ""
     @AppStorage("userPic") private var userPic: String = ""
-    @AppStorage("signIn") var isSignIn = false
+    @AppStorage("isSignIn") private var isSignIn : Bool = true
     
     @State private var retrievedToken: String? = nil
     var body: some View {
@@ -62,6 +62,9 @@ struct HomeView: View {
         do {
             try Auth.auth().signOut()
             isSignIn = false
+            userPic = ""
+            userEmail = ""
+            userName = ""
             print("User logged out successfully")
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)

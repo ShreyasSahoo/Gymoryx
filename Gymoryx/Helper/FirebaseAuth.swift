@@ -25,7 +25,7 @@ struct FirebaseAuth {
             if let error = error {
                 // If there's an error, ensure isSignIn is false
                 DispatchQueue.main.async {
-                    UserDefaults.standard.set(false, forKey: "signIn")
+                    UserDefaults.standard.set(false, forKey: "isSignIn")
                 }
                 completion(error)
                 return
@@ -34,7 +34,7 @@ struct FirebaseAuth {
             guard let user = signResult?.user,
                   let idToken = user.idToken else {
                 DispatchQueue.main.async {
-                    UserDefaults.standard.set(false, forKey: "signIn")
+                    UserDefaults.standard.set(false, forKey: "isSignIn")
                 }
                 return
             }
@@ -45,14 +45,14 @@ struct FirebaseAuth {
             Auth.auth().signIn(with: credential) { authResult, error in
                 guard error == nil else {
                     DispatchQueue.main.async {
-                        UserDefaults.standard.set(false, forKey: "signIn")
+                        UserDefaults.standard.set(false, forKey: "isSignIn")
                     }
                     completion(error)
                     return
                 }
                 // If sign-in is successful, set isSignIn to true
                 DispatchQueue.main.async {
-                    UserDefaults.standard.set(true, forKey: "signIn")
+                    UserDefaults.standard.set(true, forKey: "isSignIn")
                 }
             }
         }

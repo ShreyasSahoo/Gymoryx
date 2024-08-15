@@ -15,6 +15,27 @@ struct User: Codable, Identifiable {
     var userPic: String
 }
 
+struct UserResponse: Codable {
+    let status: String
+    let email: String
+    let name: String
+    let token: String
+    let newUser: Bool
+    let userPic: String
+    let userCover: String
+    
+    enum CodingKeys: String, CodingKey {
+        case status
+        case email
+        case name
+        case token
+        case newUser = "newuser"
+        case userPic
+        case userCover
+    }
+}
+
+
 class UserPreferencesData: ObservableObject {
     var id : Int = 0
     @Published var goal: String = ""

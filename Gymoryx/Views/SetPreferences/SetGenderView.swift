@@ -10,6 +10,7 @@ struct SetGenderView: View {
     @State private var selectedGender: Gender? = nil
     @State private var selectedDate: Date = .distantPast
     @State private var age: String = ""
+    @State private var showToast = false
     
     let startingDate: Date = Calendar.current.date(from: DateComponents(year: 1980)) ?? Date()
     let endingDate: Date = Date()

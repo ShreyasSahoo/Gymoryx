@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1BC88AF2C6DA69F0012C729 /* OTPFormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC88AE2C6DA69F0012C729 /* OTPFormFieldView.swift */; };
+		B1BC88B12C6DA6DE0012C729 /* OTPModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC88B02C6DA6DE0012C729 /* OTPModifer.swift */; };
 		B1C315772C635F0900B9CD2E /* GymoryxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315762C635F0900B9CD2E /* GymoryxApp.swift */; };
 		B1C315792C635F0900B9CD2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315782C635F0900B9CD2E /* ContentView.swift */; };
 		B1C3157B2C635F0B00B9CD2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C3157A2C635F0B00B9CD2E /* Assets.xcassets */; };
@@ -37,7 +39,7 @@
 		BBD300EE2C6CE03A005FBB2A /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = BBD300ED2C6CE03A005FBB2A /* GoogleSignIn */; };
 		BBD300F02C6CE03A005FBB2A /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBD300EF2C6CE03A005FBB2A /* GoogleSignInSwift */; };
 		BBD300F22C6CE0CF005FBB2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBD300F12C6CE0CF005FBB2A /* GoogleService-Info.plist */; };
-		BBD300F52C6CE1E6005FBB2A /* +View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD300F42C6CE1E6005FBB2A /* +View.swift */; };
+		BBD300F52C6CE1E6005FBB2A /* Ext+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD300F42C6CE1E6005FBB2A /* Ext+View.swift */; };
 		BBD300F72C6CE6C4005FBB2A /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD300F62C6CE6C4005FBB2A /* FirebaseAuth.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B1BC88AE2C6DA69F0012C729 /* OTPFormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFormFieldView.swift; sourceTree = "<group>"; };
+		B1BC88B02C6DA6DE0012C729 /* OTPModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModifer.swift; sourceTree = "<group>"; };
 		B1C315732C635F0900B9CD2E /* Gymoryx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gymoryx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C315762C635F0900B9CD2E /* GymoryxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymoryxApp.swift; sourceTree = "<group>"; };
 		B1C315782C635F0900B9CD2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,7 +94,7 @@
 		BBD300EA2C6CDE4D005FBB2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD300F12C6CE0CF005FBB2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBD300F32C6CE0E8005FBB2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		BBD300F42C6CE1E6005FBB2A /* +View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+View.swift"; sourceTree = "<group>"; };
+		BBD300F42C6CE1E6005FBB2A /* Ext+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+View.swift"; sourceTree = "<group>"; };
 		BBD300F62C6CE6C4005FBB2A /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +177,7 @@
 		B103CC162C672A1300B60710 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				B1BC88B22C6DF3C10012C729 /* OTP */,
 				BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */,
 				BBD300DE2C6A7341005FBB2A /* RegisterUserScreen.swift */,
 				BBD300E02C6A7351005FBB2A /* ForgotPasswordScreen.swift */,
@@ -217,6 +222,15 @@
 				B1C315862C635F0B00B9CD2E /* GymoryxTests */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		B1BC88B22C6DF3C10012C729 /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				B1BC88B02C6DA6DE0012C729 /* OTPModifer.swift */,
+				B1BC88AE2C6DA69F0012C729 /* OTPFormFieldView.swift */,
+			);
+			path = OTP;
 			sourceTree = "<group>";
 		};
 		B1C3156A2C635F0900B9CD2E = {
@@ -284,7 +298,7 @@
 			children = (
 				BBD300EA2C6CDE4D005FBB2A /* AppDelegate.swift */,
 				BBD300F62C6CE6C4005FBB2A /* FirebaseAuth.swift */,
-				BBD300F42C6CE1E6005FBB2A /* +View.swift */,
+				BBD300F42C6CE1E6005FBB2A /* Ext+View.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -435,7 +449,7 @@
 				BBD300DF2C6A7341005FBB2A /* RegisterUserScreen.swift in Sources */,
 				B1C315C72C64C3C000B9CD2E /* SetGoalsTabBar.swift in Sources */,
 				BBAFA93B2C64207600DCE4FF /* SetYourGoal.swift in Sources */,
-				BBD300F52C6CE1E6005FBB2A /* +View.swift in Sources */,
+				BBD300F52C6CE1E6005FBB2A /* Ext+View.swift in Sources */,
 				BBAFA9372C63AD8700DCE4FF /* LoginScreen.swift in Sources */,
 				BB27DC092C6569880082FB4E /* SetBodyMuscleCategory.swift in Sources */,
 				B1C315792C635F0900B9CD2E /* ContentView.swift in Sources */,
@@ -445,9 +459,11 @@
 				B1C315A32C63C99700B9CD2E /* SetBodyFatView.swift in Sources */,
 				B1C315C32C63F9B100B9CD2E /* SplashScreenTwo.swift in Sources */,
 				B1C315C52C63FA3800B9CD2E /* SplashScreenThree.swift in Sources */,
+				B1BC88B12C6DA6DE0012C729 /* OTPModifer.swift in Sources */,
 				B1C315772C635F0900B9CD2E /* GymoryxApp.swift in Sources */,
 				B1C315CB2C65066E00B9CD2E /* KeychainHelper.swift in Sources */,
 				B1C315CD2C652AE900B9CD2E /* NetworkManager.swift in Sources */,
+				B1BC88AF2C6DA69F0012C729 /* OTPFormFieldView.swift in Sources */,
 				B1C315CF2C652DAD00B9CD2E /* HomeView.swift in Sources */,
 				BBD300EB2C6CDE4D005FBB2A /* AppDelegate.swift in Sources */,
 				B1C315C12C63F87200B9CD2E /* SplashScreenOne.swift in Sources */,

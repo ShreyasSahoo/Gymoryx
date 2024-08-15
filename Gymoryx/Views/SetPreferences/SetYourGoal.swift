@@ -1,11 +1,13 @@
 import SwiftUI
 
 struct SetYourGoal: View {
+    
     @ObservedObject var userData: UserPreferencesData
-
+    @State private var showToast = false
+    
     var goals: [String] = ["Weight Loss", "Gain Weight", "Community Connect", "Bodybuilding", "Stamina & Mobility", "Lifestyle Management", "Strength & Conditioning", "Injury Rehab"]
     var images: [String] = ["weight_lose", "weight_gain", "community", "body", "stamina", "lifestyle", "strength", "rehab", "community"]
-
+    
     let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible())
