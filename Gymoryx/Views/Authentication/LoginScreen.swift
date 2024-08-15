@@ -1,4 +1,7 @@
 import SwiftUI
+import Firebase
+import GoogleSignIn
+import FirebaseAuth
 
 struct LoginScreen: View {
     @State private var email: String = ""
@@ -117,6 +120,13 @@ struct LoginScreen: View {
                 
                 Button(action: {
                     // Add your Google login logic here
+                    FirebaseAuth.share.signInWithGoogle(presenting: getRootViewController()) { error in
+                        if let error = error {
+                            print("Google Sign-In Error: \(error.localizedDescription)")
+                        } else {
+                            print("Google Sign-In Successful")
+                        }
+                    }
                 }) {
                     HStack {
                         Image("google")

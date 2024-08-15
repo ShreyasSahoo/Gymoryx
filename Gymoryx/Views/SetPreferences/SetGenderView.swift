@@ -9,6 +9,7 @@ struct SetGenderView: View {
 
     @State private var selectedGender: Gender? = nil
     @State private var selectedDate: Date = .distantPast
+    @State private var age: String = ""
     
     let startingDate: Date = Calendar.current.date(from: DateComponents(year: 1980)) ?? Date()
     let endingDate: Date = Date()
@@ -80,6 +81,32 @@ struct SetGenderView: View {
                     .onChange(of: selectedDate) { newValue in
                         userData.selectedDate = newValue
                     }
+//                HStack(spacing:40){
+//                    Text("Enter Your Age")
+//                        .font(.title2)
+//                        .bold()
+//                        .foregroundColor(Color.accentColor)
+//                    TextField("", text: $age)
+//                        .font(.title2)
+//                        .bold()
+//                        .frame(width: 50)
+//                        .foregroundColor(.white)
+//                        .overlay(
+//                            Rectangle()
+//                                .frame(width: 45, height: 2)
+//                                .foregroundColor(.white)
+//                                .padding(.top,40)
+//                        )
+//
+//                        .background(
+//                            Rectangle()
+//                                .frame(width: 50)
+//                                .frame(height: 50).padding()
+//                                .foregroundColor(Color("navyblue"))
+//                            
+//                        )
+//                }
+                    
                 
                 Spacer()
             }
