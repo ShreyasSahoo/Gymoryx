@@ -10,16 +10,16 @@ import FirebaseAuth
 @main
 struct GymoryxApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @AppStorage("isSignIn") var isSignIn = true
+    @AppStorage("isSignIn") var isSignIn = false
     @AppStorage("userName") private var userName: String = ""
     var body: some Scene {
         WindowGroup {
 //SetGoalsTabBar(userData: UserPreferencesData())
             Group {
-                if userName.isEmpty {
+                if !isSignIn {
         ContentView()
                 } else {
-        HomeView()
+        MainTabView()
             .onAppear {
 //            checkSignInStatus()
                 print(isSignIn)

@@ -75,30 +75,32 @@ struct LoginScreen: View {
                 .padding(.leading, 175)
                 .foregroundColor(Color("navyblue"))
                 
+                Button {
+                    Task{
+                        await loginButtonPressed()
+                    }
+                   
+                } label: {
+                    Text("LOGIN")
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(.white)
+                        .opacity(0.8)
+                }
+                .frame(width: 300, height: 60)
+                .padding(.horizontal, 5)
+                .background(Color("navyblue"))
+                .cornerRadius(15)
+
                 NavigationLink(
                     destination: SetGoalsTabBar(userData: UserPreferencesData()),
                     isActive: $navigateToGoals,
                     label: {
-                        Button {
-                            Task{
-                                await loginButtonPressed()
-                            }
-                           
-                        } label: {
-                            Text("LOGIN")
-                                .font(.title2)
-                                .bold()
-                                .foregroundColor(.white)
-                                .opacity(0.8)
-                        }
-                        .frame(width: 300, height: 60)
-                        .padding(.horizontal, 5)
-                        .background(Color("navyblue"))
-                        .cornerRadius(15)
+                        EmptyView()
                     }
                 )
                 
-                NavigationLink(destination: HomeView(), isActive: $navigateToHome) {
+                NavigationLink(destination: MainTabView(), isActive: $navigateToHome) {
                     EmptyView()
                 }
               

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1B4035B2C79DE3A000FD2C9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B4035A2C79DE3A000FD2C9 /* MainTabView.swift */; };
+		B1B4035D2C79DE6D000FD2C9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B4035C2C79DE6D000FD2C9 /* HomeView.swift */; };
+		B1B4035F2C79DE97000FD2C9 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B4035E2C79DE97000FD2C9 /* SubscriptionView.swift */; };
+		B1B403612C79DEC7000FD2C9 /* WhatsappView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B403602C79DEC7000FD2C9 /* WhatsappView.swift */; };
 		B1BC88AF2C6DA69F0012C729 /* OTPFormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC88AE2C6DA69F0012C729 /* OTPFormFieldView.swift */; };
 		B1BC88B12C6DA6DE0012C729 /* OTPModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC88B02C6DA6DE0012C729 /* OTPModifer.swift */; };
 		B1C315772C635F0900B9CD2E /* GymoryxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315762C635F0900B9CD2E /* GymoryxApp.swift */; };
@@ -26,7 +30,6 @@
 		B1C315C92C65064800B9CD2E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315C82C65064800B9CD2E /* UserModel.swift */; };
 		B1C315CB2C65066E00B9CD2E /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */; };
 		B1C315CD2C652AE900B9CD2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */; };
-		B1C315CF2C652DAD00B9CD2E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CE2C652DAD00B9CD2E /* HomeView.swift */; };
 		B1C315D12C65CB5200B9CD2E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315D02C65CB5200B9CD2E /* SplashView.swift */; };
 		BB27DC092C6569880082FB4E /* SetBodyMuscleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */; };
 		BBAFA9372C63AD8700DCE4FF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */; };
@@ -61,6 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B1B4035A2C79DE3A000FD2C9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		B1B4035C2C79DE6D000FD2C9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B1B4035E2C79DE97000FD2C9 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		B1B403602C79DEC7000FD2C9 /* WhatsappView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappView.swift; sourceTree = "<group>"; };
 		B1BC88AE2C6DA69F0012C729 /* OTPFormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFormFieldView.swift; sourceTree = "<group>"; };
 		B1BC88B02C6DA6DE0012C729 /* OTPModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModifer.swift; sourceTree = "<group>"; };
 		B1C315732C635F0900B9CD2E /* Gymoryx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gymoryx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +90,6 @@
 		B1C315C82C65064800B9CD2E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		B1C315CE2C652DAD00B9CD2E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B1C315D02C65CB5200B9CD2E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBodyMuscleCategory.swift; sourceTree = "<group>"; };
 		BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -189,7 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				B1C315782C635F0900B9CD2E /* ContentView.swift */,
-				B1C315CE2C652DAD00B9CD2E /* HomeView.swift */,
+				B1B4035A2C79DE3A000FD2C9 /* MainTabView.swift */,
+				B1B4035C2C79DE6D000FD2C9 /* HomeView.swift */,
+				B1B4035E2C79DE97000FD2C9 /* SubscriptionView.swift */,
+				B1B403602C79DEC7000FD2C9 /* WhatsappView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -454,17 +463,20 @@
 				BB27DC092C6569880082FB4E /* SetBodyMuscleCategory.swift in Sources */,
 				B1C315792C635F0900B9CD2E /* ContentView.swift in Sources */,
 				BBD300F72C6CE6C4005FBB2A /* FirebaseAuth.swift in Sources */,
+				B1B4035F2C79DE97000FD2C9 /* SubscriptionView.swift in Sources */,
 				B1C315C92C65064800B9CD2E /* UserModel.swift in Sources */,
 				B1C315A12C63C1C500B9CD2E /* SetGenderView.swift in Sources */,
 				B1C315A32C63C99700B9CD2E /* SetBodyFatView.swift in Sources */,
 				B1C315C32C63F9B100B9CD2E /* SplashScreenTwo.swift in Sources */,
+				B1B4035D2C79DE6D000FD2C9 /* HomeView.swift in Sources */,
 				B1C315C52C63FA3800B9CD2E /* SplashScreenThree.swift in Sources */,
 				B1BC88B12C6DA6DE0012C729 /* OTPModifer.swift in Sources */,
 				B1C315772C635F0900B9CD2E /* GymoryxApp.swift in Sources */,
 				B1C315CB2C65066E00B9CD2E /* KeychainHelper.swift in Sources */,
+				B1B4035B2C79DE3A000FD2C9 /* MainTabView.swift in Sources */,
 				B1C315CD2C652AE900B9CD2E /* NetworkManager.swift in Sources */,
 				B1BC88AF2C6DA69F0012C729 /* OTPFormFieldView.swift in Sources */,
-				B1C315CF2C652DAD00B9CD2E /* HomeView.swift in Sources */,
+				B1B403612C79DEC7000FD2C9 /* WhatsappView.swift in Sources */,
 				BBD300EB2C6CDE4D005FBB2A /* AppDelegate.swift in Sources */,
 				B1C315C12C63F87200B9CD2E /* SplashScreenOne.swift in Sources */,
 				BBAFA9392C64201400DCE4FF /* SetBodyMeasurement.swift in Sources */,
