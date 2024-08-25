@@ -174,6 +174,7 @@ struct CardView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 35)
+                    .tint(Color("p1c1"))
             } else {
                 Image(name)
                     .resizable()
@@ -183,8 +184,10 @@ struct CardView: View {
             Spacer()
             VStack(alignment:.leading){
                 Text("Gym \(role)")
-                    .foregroundStyle(.teal)
+                    .foregroundStyle(Color("p1c3"))
+                    .bold()
                 Text("\(responsibility) Gym")
+                    .foregroundStyle(Color("p1c1"))
                     .bold()
             }
             .font(.callout)
