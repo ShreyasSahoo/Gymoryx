@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct HomeView: View {
 
     
@@ -18,15 +20,16 @@ struct HomeView: View {
                 VStack(alignment:.leading){
                     Text("Stay Updated, Stay Fit")
                         .font(.title3)
-                        .bold()
+                        .fontWeight(.heavy)
                     VStack(alignment:.center,spacing: 10){
-                        HStack{
-                            IconView()
-                            IconView()
-                            IconView()
-                            IconView()
+                        HStack(spacing:35){
+                            
+                            IconView(imageName: "gym_b", title : "Activity")
+                            IconView(imageName: "diet_b",title : "Meal")
+                            IconView(imageName: "health_b",title : "Tracker")
+                            IconView(imageName: "weight_b",title : "Weight")
                         }
-                       
+                        .frame(maxWidth: .infinity)
                             
                     }
                     
@@ -37,12 +40,14 @@ struct HomeView: View {
                 VStack(alignment:.leading){
                     Text("Stay Connected")
                         .font(.title3)
-                        .bold()
-                    VStack(alignment:.center,spacing: 10){
+                        .fontWeight(.heavy)
+                    VStack(alignment:.center){
                         HStack{
-                            CardView()
-                            CardView()
+                            CardView(name: "", role: "Goers", responsibility: "Connect")
+                            Spacer()
+                            CardView(name: "my_attendance" ,role: "Owners", responsibility: "Manage")
                         }
+                        .frame(maxWidth: .infinity)
                        
                             
                     }
@@ -79,7 +84,7 @@ struct HomeView: View {
             
         }
         .frame(maxWidth: .infinity,maxHeight: .infinity)
-        .background(.gray.opacity(0.1))
+        .background(.gray.opacity(0.08))
         .scrollIndicators(.never)
         }
         
@@ -104,11 +109,12 @@ struct WorkoutView: View {
                 
                 Spacer()
                 
-                VStack(alignment:.center){
+                VStack(alignment:.center,spacing: 10){
                     Text("Biceps and Back")
                         .font(.title3)
                         .bold()
                         .foregroundStyle(Color("navyblue"))
+                        
                     HStack{
                         Text("Start")
                         Spacer()
@@ -124,7 +130,7 @@ struct WorkoutView: View {
                     }
                     .buttonStyle(BorderedProminentButtonStyle())
                 }
-                .frame(width: UIScreen.main.bounds.width * 0.4)
+                .frame(width: UIScreen.main.bounds.width * 0.5)
                 
             }
         }
@@ -132,47 +138,59 @@ struct WorkoutView: View {
         .padding()
         .background(.white)
         .clipShape(.rect(cornerRadius: 15))
+        .shadow(radius: 1,x:0,y:-1)
     }
 }
 
 struct  IconView : View {
+    @State var imageName : String
+    @State var title : String
     var body: some View {
         VStack{
             VStack{
-                Image(systemName : "dumbbell.fill")
+                Image(imageName)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 50)
+                    .frame(width: 35)
                 
             }
-            .padding()
-            .frame(width: 80,height: 80)
+            .padding(10)
             .background(.white)
-            .clipShape(.rect(cornerRadius: 10))
-            
-            Text("Activity")
+            .clipShape(.rect(cornerRadius: 20))
+            .shadow(color: Color.gray,radius: 1,x: 0,y:1)
+            Text(title)
         }
     }
 }
 
 struct CardView: View {
+    @State var name : String
+    @State var role : String
+    @State var responsibility : String
     var body: some View {
         HStack{
-            Image(systemName: "person.2.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 50)
-            VStack{
-                Text("Gym Goers")
+            if name.isEmpty{
+                Image(systemName: "person.2.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 35)
+            } else {
+                Image(name)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 35)
+            }
+            Spacer()
+            VStack(alignment:.leading){
+                Text("Gym \(role)")
                     .foregroundStyle(.teal)
-                Text("Connect Gym")
+                Text("\(responsibility) Gym")
                     .bold()
             }
             .font(.callout)
             
         }
-        .padding(.horizontal,5)
-        .padding(.vertical)
+        .padding(8)
         .background(.white)
         .clipShape(.rect(cornerRadius: 10))
     }
@@ -184,7 +202,14 @@ struct TargetView: View {
             Image(systemName: "fork.knife")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 20)
+                .foregroundStyle(.orange)
+                .frame(width: 10)
+                .padding(5)
+                .background(.white)
+                .padding(10)
+                .clipShape(Rectangle())
+                .background(.orange)
+                .clipShape(.rect(cornerRadius: 10))
             VStack(alignment:.leading){
                 Text("Food Intake")
                     .foregroundStyle(.primary)
