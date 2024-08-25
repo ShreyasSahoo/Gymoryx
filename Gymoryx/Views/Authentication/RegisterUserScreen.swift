@@ -125,7 +125,7 @@ struct RegisterUserScreen: View {
                 .cornerRadius(15)
                 .padding(.top)
                 
-                NavigationLink(destination: OTPFormFieldView(), isActive: $navigateToNextScreen) {
+                NavigationLink(destination: OTPFormFieldView(email: email), isActive: $navigateToNextScreen) {
                     EmptyView()
                 }
                 
