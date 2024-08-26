@@ -6,12 +6,13 @@ import FirebaseAuth
 struct LoginScreen: View {
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var isPasswordVisible: Bool = false 
+    @State private var isPasswordVisible: Bool = false
     @State private var isLoginSuccessful: Bool = false
     @State private var showToast: Bool = false
     @State private var toastMessage: String = ""
     @State private var navigateToHome = false
     @State private var navigateToGoals = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -158,93 +159,54 @@ struct LoginScreen: View {
                             .shadow(radius: 2, y: 2)
                     )
                 }
+                if showToast {
+                               Text(toastMessage)
+                                   .padding()
+                                   .background(Color.red.opacity(0.8))
+                                   .cornerRadius(8)
+                                   .foregroundColor(.white)
+                                   .transition(.slide)
+                                   .animation(.easeInOut)
+                           }
                 Spacer()
             }
+            .onAppear {
+                        NetworkManager.shared
+                    }
             .padding()
         }
         .navigationBarBackButtonHidden(true)
     }
     
-    func saveUserData(for user: UserResponse) {
-        // Save token securely in Keychain
-        let isSaved = KeychainHelper.saveToken(token: user.token)
-        print(isSaved)
-        // Save other properties in UserDefaults
-        UserDefaults.standard.set(true, forKey: "isSignIn")
-
-        UserDefaults.standard.set(user.name, forKey: "userName")
-        UserDefaults.standard.set(user.email, forKey: "userEmail")
-        UserDefaults.standard.set(user.userPic, forKey: "userPic")
-        UserDefaults.standard.set(user.userCover, forKey: "userCover")
-        
-        print("User data saved successfully")
-    }
-    
-
     func loginButtonPressed() async {
-        
-        // URL to the server
-        let urlString = "https://gymoryx.in/app/getapi"
-        
-        // Create the URL object
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
-            return
-        }
-        
-        // Prepare the parameters
-        let passwordEncoded = password.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let emailEncoded = email.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let apiKey = "608DFF6wOyQQUvwAO6LwJ60KFDzjt4QE5prQ6"
-        let apiKeyEncoded = apiKey.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let method = "login"
-        
-        print(passwordEncoded, emailEncoded)
-        
-        // Create the request body
-        let postData = "password=\(passwordEncoded)&email=\(emailEncoded)&api_key=\(apiKeyEncoded)&method=\(method)"
-        
-        // Create the request
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpBody = postData.data(using: .utf8)
-        
-        do {
-            // Send the request using async/await
-            let (data, _) = try await URLSession.shared.data(for: request)
-            
-            // Decode the JSON response into the UserResponse model
-            let userResponse = try JSONDecoder().decode(UserResponse.self, from: data)
-            print("Decoded Response: \(userResponse)")
-            
-            // Save user data and update UI on the main thread
-            saveUserData(for: userResponse)
-            if userResponse.status == "success"{
-                if userResponse.newUser{
+            if NetworkManager.shared.isConnected {
+                do {
+                    let userResponse = try await LoginManager.shared.loginUser(email: email, password: password)
+                    LoginManager.shared.saveUserData(for: userResponse)
                     
                     await MainActor.run {
-                        navigateToGoals = true
+                        if userResponse.status == "success" {
+                            if userResponse.newUser {
+                                navigateToGoals = true
+                            } else {
+                                navigateToHome = true
+                            }
+                        }
                     }
-                } else {
+                } catch {
+                    print("Error: \(error.localizedDescription)")
+                }
+            } else {
+                await MainActor.run {
+                    showToast = true
+                    toastMessage = "No internet connection. Please try again later."
                     
-                    await MainActor.run {
-                        navigateToHome = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        showToast = false
                     }
                 }
-                
             }
-            
-            
-        } catch {
-            // Handle errors (e.g., network issues, decoding errors)
-            print("Error: \(error.localizedDescription)")
         }
-    }
-
-    
-
-
  }
 
 

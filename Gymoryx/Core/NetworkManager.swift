@@ -6,52 +6,20 @@
 //
 
 import Foundation
+import Network
 
 class NetworkManager {
+    
     static let shared = NetworkManager()
     
-    private init() {}
+    private let monitor = NWPathMonitor()
+    private let queue = DispatchQueue.global(qos: .background)
+    private(set) var isConnected: Bool = false
     
-    func fetchUserData() {
-        guard let url = URL(string: "https://66b4cc499f9169621ea45fb3.mockapi.io/login/user") else {
-            print("Invalid URL")
-            return
+    private init() {
+        monitor.pathUpdateHandler = { path in
+            self.isConnected = path.status == .satisfied
         }
-        
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("Failed to fetch data: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let data = data else {
-                print("No data received")
-                return
-            }
-            
-            do {
-                let users = try JSONDecoder().decode([User].self, from: data)
-                if let user = users.first {
-                    self.saveUserData(user: user)
-                }
-            } catch {
-                print("Failed to decode data: \(error.localizedDescription)")
-            }
-        }
-        task.resume()
-    }
-    
-    private func saveUserData(user: User) {
-        // Save token securely in Keychain
-       let isSaved = KeychainHelper.saveToken(token: user.token)
-        print(isSaved)
-        // Save other properties in UserDefaults
-        UserDefaults.standard.set(user.name, forKey: "userName")
-        UserDefaults.standard.set(user.email, forKey: "userEmail")
-        UserDefaults.standard.set(user.userPic, forKey: "userPic")
-        
-        print("User data saved successfully")
+        monitor.start(queue: queue)
     }
 }
-
-

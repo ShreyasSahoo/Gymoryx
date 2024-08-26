@@ -31,6 +31,7 @@
 		B1C315CB2C65066E00B9CD2E /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */; };
 		B1C315CD2C652AE900B9CD2E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */; };
 		B1C315D12C65CB5200B9CD2E /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C315D02C65CB5200B9CD2E /* SplashView.swift */; };
+		B1E7C7E52C7C4457006A75FA /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E7C7E42C7C4457006A75FA /* LoginManager.swift */; };
 		BB27DC092C6569880082FB4E /* SetBodyMuscleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */; };
 		BBAFA9372C63AD8700DCE4FF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */; };
 		BBAFA9392C64201400DCE4FF /* SetBodyMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */; };
@@ -91,6 +92,7 @@
 		B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B1C315D02C65CB5200B9CD2E /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		B1E7C7E42C7C4457006A75FA /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		BB27DC082C6569880082FB4E /* SetBodyMuscleCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetBodyMuscleCategory.swift; sourceTree = "<group>"; };
 		BBAFA9362C63AD8700DCE4FF /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		BBAFA9382C64201400DCE4FF /* SetBodyMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBodyMeasurement.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				B1C315CC2C652AE900B9CD2E /* NetworkManager.swift */,
 				B1C315CA2C65066E00B9CD2E /* KeychainHelper.swift */,
+				B1E7C7E42C7C4457006A75FA /* LoginManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				B1C315772C635F0900B9CD2E /* GymoryxApp.swift in Sources */,
 				B1C315CB2C65066E00B9CD2E /* KeychainHelper.swift in Sources */,
 				B1B4035B2C79DE3A000FD2C9 /* MainTabView.swift in Sources */,
+				B1E7C7E52C7C4457006A75FA /* LoginManager.swift in Sources */,
 				B1C315CD2C652AE900B9CD2E /* NetworkManager.swift in Sources */,
 				B1BC88AF2C6DA69F0012C729 /* OTPFormFieldView.swift in Sources */,
 				B1B403612C79DEC7000FD2C9 /* WhatsappView.swift in Sources */,
