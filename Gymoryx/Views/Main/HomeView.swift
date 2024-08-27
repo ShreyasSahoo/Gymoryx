@@ -11,10 +11,13 @@ import SwiftUI
 
 struct HomeView: View {
 
+    @State private var showModal = false
+    @State private var showModal2 = false
     
     var body: some View {
         ScrollView {
-            VStack(spacing:25) {
+            VStack(spacing:25)
+            {
                 WorkoutView()
                 
                 VStack(alignment:.leading){
@@ -23,9 +26,24 @@ struct HomeView: View {
                         .fontWeight(.heavy)
                     VStack(alignment:.center,spacing: 10){
                         HStack(spacing:35){
+                            Button(action:{
+                                showModal = true
+}){
                             
-                            IconView(imageName: "gym_b", title : "Activity")
-                            IconView(imageName: "diet_b",title : "Meal")
+                                IconView(imageName: "gym_b", title : "Activity")
+                            }
+                            .fullScreenCover(isPresented: $showModal) {
+                                HomeScreen_Activities()
+                            }
+                            Button(action:{
+                                showModal2 = true
+}){
+                                IconView(imageName: "diet_b",title : "Meal")
+                            }
+                                                       
+                            .fullScreenCover(isPresented: $showModal2) {
+                                HomeScreen_Meals()
+                            }
                             IconView(imageName: "health_b",title : "Tracker")
                             IconView(imageName: "weight_b",title : "Weight")
                         }
@@ -41,7 +59,8 @@ struct HomeView: View {
                     Text("Stay Connected")
                         .font(.title3)
                         .fontWeight(.heavy)
-                    VStack(alignment:.center){
+                    VStack(alignment:.center)
+                    {
                         HStack{
                             CardView(name: "", role: "Goers", responsibility: "Connect")
                             Spacer()
@@ -53,14 +72,15 @@ struct HomeView: View {
                     }
                     
                 }
+                .padding(.vertical)
                 .foregroundStyle(Color("navyblue"))
                 .frame(maxWidth: .infinity)
                 
                 VStack(alignment:.leading){
                     Text("Today's Target")
                         .font(.title3)
-                        .bold()
-                    
+                        .fontWeight(.heavy)
+
                     ZStack{
                         Color.white
                             .frame(maxWidth: .infinity)
@@ -159,6 +179,8 @@ struct  IconView : View {
             .clipShape(.rect(cornerRadius: 20))
             .shadow(color: Color.gray,radius: 1,x: 0,y:1)
             Text(title)
+                .bold()
+                .font(.footnote)
         }
     }
 }
@@ -169,6 +191,7 @@ struct CardView: View {
     @State var responsibility : String
     var body: some View {
         HStack{
+            Spacer()
             if name.isEmpty{
                 Image(systemName: "person.2.fill")
                     .resizable()
@@ -190,9 +213,10 @@ struct CardView: View {
                     .foregroundStyle(Color("p1c1"))
                     .bold()
             }
-            .font(.callout)
+            .font(.subheadline)
             
         }
+        .padding(.vertical,10)
         .padding(8)
         .background(.white)
         .clipShape(.rect(cornerRadius: 10))
@@ -216,16 +240,17 @@ struct TargetView: View {
             VStack(alignment:.leading){
                 Text("Food Intake")
                     .foregroundStyle(.primary)
-                    .font(.title3)
-                    .bold()
+                    .font(.headline)
+                    .fontWeight(.heavy)
                 Text("14th March")
                     .foregroundStyle(.secondary)
+                    .font(.footnote)
             }
             Spacer()
             VStack{
                 Text("2500")
                     .foregroundStyle(.green)
-                    .bold()
+                    .fontWeight(.heavy)
                 Text("Calories")
                     .foregroundStyle(.secondary)
             }

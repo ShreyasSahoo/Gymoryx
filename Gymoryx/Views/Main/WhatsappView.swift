@@ -7,15 +7,17 @@ struct WhatsappView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                Image("gymoryx")
+            VStack(spacing:0) {
+                Image("whatsapp")
                     .resizable()
-                    .frame(height: UIScreen.main.bounds.height / 3)
+                    .frame(height: UIScreen.main.bounds.height / 2)
+                    .background(Color(red: 0.171, green: 0.7, blue: 0.092))
                 Rectangle()
                     .foregroundColor(.gray)
-                    .opacity(0.4)
+                    .opacity(0.2)
             }
-            .edgesIgnoringSafeArea(.bottom)
+            .edgesIgnoringSafeArea(.all)
+
             .overlay {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("Setup Whatsapp Number")
@@ -25,7 +27,7 @@ struct WhatsappView: View {
                         .opacity(0.8)
                     
                     // Display only the country code in the TextField
-                    TextField("", text: .constant(extractCountryCode(from: selectedCountry)))
+                    TextField("", text: .constant(extractCountryCode(from: selectedCountry)+" "))
                     Rectangle()
                         .foregroundColor(.gray)
                         .frame(height: 1)
@@ -85,6 +87,7 @@ struct WhatsappView: View {
                 .background {
                     Color.white
                         .cornerRadius(20)
+                        .shadow(color: .black, radius: 1)
                 }
                 .padding()
             }
